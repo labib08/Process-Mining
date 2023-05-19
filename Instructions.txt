@@ -1,0 +1,6 @@
+To run the program (on a Mac, using terminal):
+
+gcc -Wall -o assignment2 assignment2.c
+./assignment2 < test0.txt
+
+And hit Enter.

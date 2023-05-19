@@ -90,7 +90,6 @@ trace_t *insert_at_foot(trace_t *trace, action_t event);
 trace_t* make_empty_trace(void);
 int is_empty_trace(trace_t* trace);
 action_t get_head(trace_t* trace);
-trace_t *get_tail(trace_t* trace);
 int get_distinct_events(log_t log[], action_t A[], int B[], int n);
 void free_list(list_t* list); 
 int check_repetitive_event(action_t A[], int B[], action_t action, int n);
@@ -226,16 +225,6 @@ int is_empty_trace(trace_t *trace){
 
 action_t get_head(trace_t* trace){
     return trace -> head -> actn;
-}
-
-trace_t *get_tail(trace_t * trace){
-    event_t *oldhead;
-    oldhead = trace -> head;
-    trace -> head = trace -> head -> next;
-    if (trace -> head == NULL){
-        trace -> foot = NULL;    
-    }
-    return trace;
 }
 
 /* Computes the distinct events from the log of events and returns
